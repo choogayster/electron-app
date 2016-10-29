@@ -1,0 +1,18 @@
+{
+  "name": "alectron-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron index.js",
+    "build": "electron-packager . MyApp"
+  },
+  "author": "vlad",
+  "license": "ISC",
+  "dependencies": {
+    "angular-ui-router": "^0.3.1",
+    "electron-packager" : "^3.2.0",
+    "electron-prebuilt" : "^0.25.2"
+  }
+}

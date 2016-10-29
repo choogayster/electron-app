@@ -1,0 +1,47 @@
+<div class="card-success" ng-hide="vm.model.userDataEntered">
+	<div class="card-header">
+		<div class="block-title">
+			Дані користувача
+		</div>
+	</div>
+	<form class="form-horizontal">
+		<div class="form-group">
+      <div class="control-label col-sm-2" >Прізвище:</div>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" placeholder="Введіть прізвище" ng-model="vm.model.user.lName">
+      </div>
+    </div>
+		<div class="form-group">
+      <div class="control-label col-sm-2">Ім'я:</div>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" placeholder="Введіть ім'я" ng-model="vm.model.user.fName">
+      </div>
+    </div>
+		<div class="form-group">
+      <div class="control-label col-sm-2">Группа:</div>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" placeholder="Введіть группу" ng-model="vm.model.user.group">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default" ng-hide="vm.model.isUser" ng-click="vm.submit()">Увести</button>
+        <button type="submit" class="btn btn-default" ng-show="vm.model.isUser" ng-click="vm.backToVar()">Повернутись до завдання</button>
+      </div>
+    </div>
+	</form>
+</div>
+
+<div class="card-success" ng-show="vm.model.userDataEntered">
+	<div class="card-header">
+		<div class="block-title">
+			Варіанти
+		</div>
+		<div class="block-right">
+			<span ng-click="vm.back()">Назад</span>
+		</div>
+		
+	</div>
+	<button type="button" class="btn btn-default var-item" ng-repeat="key in vm.model.variants" ng-click="vm.goVariant($index)">{{$index+1}}</button>
+</div>
+

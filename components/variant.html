@@ -1,0 +1,31 @@
+<div class="card-success">
+	<div class="card-header">
+    <div class="block-title">
+      Варіант № {{vm.model.variant+1}}
+    </div>
+    <div class="block-right">
+      <span ng-click="vm.back()">Назад</span>
+    </div>
+	</div>
+  <div class="card-body">
+    <div class="question" ng-repeat="q in vm.model.questions">
+      <div class="ontitle" ng-show="$index==0">
+        Частина 1. У завданнях 1 - 4 позначте одну правильну, на вашу думку, відповідь.
+      </div>
+      <div class="ontitle" ng-show="$index==4">
+        Частина 2. Завдання 5 - 7 виконайте на чернетці та запишіть тільки відповідь.
+      </div>
+      {{$index+1}}. {{q.title}}
+      <div ng-show="q.type=='test'">
+        <div class="answer" ng-repeat="a in q.answers" ng-class="{'selected-answer' : $index==q.input}" ng-click="vm.selectAnswer(q, $index)">
+          {{a}}
+        </div>
+      </div>
+      <div ng-show="q.type=='input'">
+        <input type="text" class="form-control answer-input" ng-model="q.input" ng-class="{'selected-answer' : q.input!=''}">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-default" ng-click="vm.result()" style="margin:10px">Завершити</button>
+  </div>
+	
+</div>
