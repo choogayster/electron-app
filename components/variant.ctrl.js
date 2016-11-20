@@ -20,6 +20,7 @@ app.controller('variantCtrl', function(QuestionsSrv, MainFactory, $stateParams, 
 	}
 
 	ctrl.result = function() {
+		MainFactory.put('questions', ctrl.model.questions);
 		$state.go('result');
 	}
 
