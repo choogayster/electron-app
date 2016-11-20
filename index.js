@@ -34,7 +34,8 @@ app.on('ready', function() {
     width: 800,
     height: 800
   })
-  mainWindow.loadUrl('file://' + __dirname + '/index.html')
+  mainWindow.loadUrl('file://' + __dirname + '/index.html');
+  //mainWindow.webContents.openDevTools();
 })
 
 app.on('window-all-closed', function() {
